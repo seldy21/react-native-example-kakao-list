@@ -17,7 +17,6 @@ export const SeperateBar = (props) => {
         <Text
           style={{
             transform: [isOpened ? { rotate: "180deg" } : { rotate: "0deg" }],
-            
           }}
         >
           <MaterialIcons name="keyboard-arrow-down" size={20} color="grey" />

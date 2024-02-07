@@ -8,6 +8,8 @@ import { useState } from "react";
 import { SeperateBar } from "./src/SeperateBar";
 
 export default function App() {
+  const [isOpened, setIsOpened] = useState(true);
+
   const renderItem = ({ item }) => (
     <View>
       <Profile
@@ -20,11 +22,9 @@ export default function App() {
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isOpened, setIsOpened] = useState(true);
 
   const showListData = () => {
     setIsOpened(!isOpened);
-    console.log(isOpened)
   };
 
   return (
@@ -49,7 +49,7 @@ export default function App() {
           }
           contentContainerStyle={{ paddingHorizontal: 20 }}
           keyExtractor={(_, index) => index}
-          data={friendProfiles}
+          data={isOpened ? friendProfiles : []}
           renderItem={renderItem}
         />
         <Footer
